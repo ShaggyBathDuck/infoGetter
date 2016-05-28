@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import com.dawid.infoGetter.custom.textFields.OnlyLettersTextField?>
+<?import com.dawid.infoGetter.custom.textFields.LettersDashesAndSpacesTextField?>
+<?import com.dawid.infoGetter.custom.textFields.OnlyNumbersTextField?>
+<?import com.dawid.infoGetter.custom.textFields.PostalCodeTextField?>
+<?import com.dawid.infoGetter.custom.textFields.PhoneNumberTextField?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dawid.infoGetter.controller.FXMLController">
+   <bottom>
+      <HBox prefHeight="60.0" prefWidth="200.0" spacing="10.0" id="leftBox"  BorderPane.alignment="CENTER">
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="previousSceneButton" minHeight="30.0" minWidth="80.0" mnemonicParsing="false" onAction="#previousScene" text="Cofnij" />
+            <Button fx:id="nextSceneButton" minHeight="30.0" minWidth="80.0" mnemonicParsing="false" onAction="#nextScene" text="Dalej" />
+            <Region maxWidth="5.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="closeSceneButton" minHeight="30.0" minWidth="80.0" mnemonicParsing="false" onAction="#closeScene" text="Zamknij" />
+            <Region maxWidth="5.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="scenesStack" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Dzień dobry">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="170.0" layoutY="90.0" text="Przedstawiam moje wykonanie zadania, życzę miłego korzystania." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label text="Podaj swoje imię:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </Label>
+                  <OnlyLettersTextField fx:id="nameTextField" alignment="CENTER" promptText="Tutaj wprowadź swoje imię" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </OnlyLettersTextField>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label text="Podaj swoje nazwisko" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </Label>
+                  <LettersDashesAndSpacesTextField fx:id="surnameTextField" alignment="CENTER" promptText="Tutaj wprowadź swoje nazwisko" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </LettersDashesAndSpacesTextField>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label text="Podaj swój adres">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="54.0" text="Ulica:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <OnlyLettersTextField fx:id="streetTextField" alignment="TOP_CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj swoja ulice">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </OnlyLettersTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="113.0" text="Numer domu:" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <OnlyNumbersTextField fx:id="houseNumberTextField" alignment="CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj numer domu" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </OnlyNumbersTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="113.0" text="Numer lokalu:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <OnlyNumbersTextField fx:id="apartmentNumberTextField" alignment="CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj numer mieszkania">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </OnlyNumbersTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="13.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="123.0" text="Kod pocztowy:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <PostalCodeTextField fx:id="postalCodeTextField" alignment="CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj kod pocztowy w postaci 00-000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </PostalCodeTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="297.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="108.0" text="Miejscowość:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <LettersDashesAndSpacesTextField fx:id="cityNameTextField" alignment="CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj nazwę swojej miejscowości">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </LettersDashesAndSpacesTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="308.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="43.0" text="Kraj:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <LettersDashesAndSpacesTextField fx:id="countryNameTextField" alignment="CENTER" minWidth="250.0" prefWidth="220.0" promptText="Podaj nazwę kraju">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </LettersDashesAndSpacesTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label text="Podaj numer swojego telefonu">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </Label>
+                  <PhoneNumberTextField fx:id="phoneNumberTextField" alignment="CENTER" promptText="Tutaj wprowadź swój numer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </PhoneNumberTextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" visible="false">
+               <children>
+                  <Label text="Twoje dane:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="35.0" prefWidth="380.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label minWidth="150.0" text="Imię:" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="${nameTextField.text}" HBox.hgrow="ALWAYS" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="45.0" prefHeight="45.0" prefWidth="380.0">
+                     <children>
+                        <Label minWidth="150.0" text="Nazwisko:" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="${surnameTextField.text}" HBox.hgrow="ALWAYS" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="188.0" prefHeight="284.0" prefWidth="380.0">
+                     <children>
+                        <Label minWidth="150.0" text="Adres:" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="${streetTextField.text}" HBox.hgrow="ALWAYS" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="10.0" text="${houseNumberTextField.text}" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="slashShowLabel" layoutX="10.0" layoutY="10.0" text="/">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="134.0" layoutY="10.0" text="${apartmentNumberTextField.text}" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="${postalCodeTextField.text}" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="10.0" text="${cityNameTextField.text}" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="48.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="${countryNameTextField.text}" HBox.hgrow="ALWAYS" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="235.0" prefHeight="284.0" prefWidth="380.0">
+                     <children>
+                        <Label minWidth="150.0" text="Numer telefonu:" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="${phoneNumberTextField.text}" HBox.hgrow="ALWAYS" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+   </center>
+</BorderPane>
